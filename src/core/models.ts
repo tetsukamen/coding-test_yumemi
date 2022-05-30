@@ -16,3 +16,21 @@ export type PopulationSeries = {
   year: number;
   value: number;
 }[];
+
+export type PopulationData = {
+  prefName: string;
+  values: {
+    year: number;
+    value: number;
+  }[];
+}[];
+
+export interface ChartPoint {
+  year: number;
+  [prefName: string]: number;
+}
+
+export interface prefLabel {
+  name: string;
+  color?: string;
+}
