@@ -47,16 +47,16 @@ const Chart = ({ data }: Props) => {
     // チャート用データを整形
     const newChartData = [];
     for (let i = 0; i < data[0].values.length; i++) {
-      const chartPoinst = { year: data[0].values[i].year };
+      const chartPoint = { year: data[0].values[i].year };
       data.forEach(pref => {
-        Object.assign(chartPoinst, {
+        Object.assign(chartPoint, {
           [`${pref.prefName}`]: pref.values[i].value
         });
       });
-      newChartData.push(chartPoinst);
+      newChartData.push(chartPoint);
     }
     setChartData(newChartData);
-  }, [, data]);
+  }, [data, prevPrefList]);
 
   return (
     <LineChart

@@ -43,7 +43,7 @@ const App = () => {
         const prefNumber = parseInt(key, 10);
         const targetPrefState = prefState[prefNumber];
         const prefName = targetPrefState.prefName;
-        if (targetPrefState !== prevPrefState![prefNumber]) {
+        if (targetPrefState !== prevPrefState?.[prefNumber]) {
           if (targetPrefState.checked) {
             // 選択中の都道府県が増加した場合
             const res = await getPrefecturePopulation(prefNumber);
@@ -67,7 +67,7 @@ const App = () => {
       }
     };
     fetchPopulationData().catch(err => console.log(err));
-  }, [prefState]);
+  }, [populationData, prefState, prevPrefState]);
 
   return (
     <div className="App">
