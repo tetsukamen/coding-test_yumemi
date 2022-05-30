@@ -5,6 +5,13 @@ export interface Prefectures {
   };
 }
 
+export interface PrefecturesState {
+  [key: number]: {
+    prefName: string;
+    checked: boolean;
+  };
+}
+
 export type PopulationSeries = {
   year: number;
   value: number;

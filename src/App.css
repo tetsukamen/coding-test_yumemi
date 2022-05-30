@@ -1,0 +1,49 @@
+.title {
+  font-size: 22px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #c1c1c1;
+}
+
+/* Forms Component */
+.forms {
+  margin: 20px 10px;
+}
+
+.formTitle {
+  font-size: 13px;
+}
+
+.formsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin: 8px;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox label {
+  padding-left: 24px;
+}
+
+.checkbox input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: solid 1px black;
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "\02714";
+  position: absolute;
+  left: 3px;
+}
